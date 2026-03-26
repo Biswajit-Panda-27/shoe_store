@@ -18,8 +18,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        formData // Send formData as the second argument
+        "https://shoe-store-backend-fh5q.onrender.com//api/auth/login",
+        formData, // Send formData as the second argument
       );
       localStorage.setItem("token", response.data.token); // Store token on successful login
       setUser(response.data.user); // Update user context with the logged-in user

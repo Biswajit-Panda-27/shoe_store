@@ -12,9 +12,12 @@ const Cart = () => {
     const fetchCartItems = async () => {
       const token = localStorage.getItem("token");
       try {
-        const res = await axios.get("http://localhost:5000/api/cart/get", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const res = await axios.get(
+          "https://shoe-store-backend-fh5q.onrender.com/:5000/api/cart/get",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          },
+        );
         setCartItems(res.data);
       } catch (error) {
         console.error(error.message);
@@ -44,10 +47,10 @@ const Cart = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.delete(
-        `http://localhost:5000/api/cart/deleteItem/${productId}`,
+        `https://shoe-store-backend-fh5q.onrender.com//api/cart/deleteItem/${productId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
-        }
+        },
       );
     } catch (error) {
       console.error("Delete failed:", error.response?.data || error.message);
@@ -61,9 +64,9 @@ const Cart = () => {
       const token = localStorage.getItem("token");
       try {
         await axios.put(
-          "http://localhost:5000/api/cart/updateItem",
+          "https://shoe-store-backend-fh5q.onrender.com//api/cart/updateItem",
           { productId, quantity },
-          { headers: { Authorization: `Bearer ${token}` } }
+          { headers: { Authorization: `Bearer ${token}` } },
         );
       } catch (error) {
         console.error("Error updating quantity:", error.message);

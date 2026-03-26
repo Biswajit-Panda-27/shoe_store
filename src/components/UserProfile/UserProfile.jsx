@@ -15,10 +15,10 @@ const UserProfile = () => {
           throw new Error("No token found");
         }
         const response = await axios.get(
-          "http://localhost:5000/api/auth/userprofile",
+          "https://shoe-store-backend-fh5q.onrender.com//api/auth/userprofile",
           {
             headers: { Authorization: `Bearer ${token}` },
-          }
+          },
         );
         setUser(response.data);
       } catch (error) {
@@ -42,9 +42,12 @@ const UserProfile = () => {
   const handleDeleteAccount = async () => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/auth/deleteAccount/${user.id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      await axios.delete(
+        `https://shoe-store-backend-fh5q.onrender.com//api/auth/deleteAccount/${user.id}`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       alert("Account deleted successfully.");
       handleLogout();
     } catch (error) {

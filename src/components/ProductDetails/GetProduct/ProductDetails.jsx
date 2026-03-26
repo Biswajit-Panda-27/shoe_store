@@ -35,9 +35,9 @@ const ProductDetails = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://shoe-store-backend-fh5q.onrender.com//api/cart/add",
         { productId: product._id, quantity: 1 },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } },
       );
       alert("Product added to cart");
     } catch (error) {

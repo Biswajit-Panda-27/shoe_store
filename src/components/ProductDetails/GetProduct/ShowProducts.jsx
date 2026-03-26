@@ -21,9 +21,12 @@ const ShowProducts = () => {
   const fetchData = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/products/getAll", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const res = await axios.get(
+        "https://shoe-store-backend-fh5q.onrender.com//api/products/getAll",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
       setProducts(res.data);
       setFilteredProducts(res.data);
     } catch (error) {
