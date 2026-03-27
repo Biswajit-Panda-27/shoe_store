@@ -20,7 +20,7 @@ const Signup = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.post(
-        "https://shoe-store-backend-fh5q.onrender.com//api/auth/signup",
+        "https://shoe-store-backend-fh5q.onrender.com/api/auth/signup",
         formData, // Pass formData as the second argument
         {
           headers: { Authorization: `Bearer ${token}` }, // Pass headers as part of config

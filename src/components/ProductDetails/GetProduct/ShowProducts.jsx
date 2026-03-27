@@ -22,7 +22,7 @@ const ShowProducts = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        "https://shoe-store-backend-fh5q.onrender.com//api/products/getAll",
+        "https://shoe-store-backend-fh5q.onrender.com/api/products/getAll",
         {
           headers: { Authorization: `Bearer ${token}` },
         },

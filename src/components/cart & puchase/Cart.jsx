@@ -47,7 +47,7 @@ const Cart = () => {
     const token = localStorage.getItem("token");
     try {
       await axios.delete(
-        `https://shoe-store-backend-fh5q.onrender.com//api/cart/deleteItem/${productId}`,
+        `https://shoe-store-backend-fh5q.onrender.com/api/cart/deleteItem/${productId}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         },
@@ -64,7 +64,7 @@ const Cart = () => {
       const token = localStorage.getItem("token");
       try {
         await axios.put(
-          "https://shoe-store-backend-fh5q.onrender.com//api/cart/updateItem",
+          "https://shoe-store-backend-fh5q.onrender.com/api/cart/updateItem",
           { productId, quantity },
           { headers: { Authorization: `Bearer ${token}` } },
         );
